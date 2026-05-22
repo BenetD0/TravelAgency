@@ -136,13 +136,13 @@ export default function Trips() {
     const baseStyle = "inline-flex items-center rounded-full border px-3 py-1.5 text-sm font-medium";
     switch (tripStatus) {
       case "In Progress":
-        return `${baseStyle} border-[#22C55E]/20 bg-[#22C55E]/10 text-[#22C55E]`;
+        return `${baseStyle} border-[#ea580c]/20 bg-[#ea580c]/10 text-[#ea580c]`;
       case "Done":
-        return `${baseStyle} border-[#14532D]/20 bg-[#14532D]/10 text-[#14532D]`;
+        return `${baseStyle} border-[#7c2d12]/20 bg-[#7c2d12]/10 text-[#7c2d12]`;
       case "Cancelled":
         return `${baseStyle} border-red-200 bg-red-100 text-red-700`;
       default:
-        return `${baseStyle} border-[#7C5E3C]/20 bg-[#FAF3E0] text-[#7C5E3C]`;
+        return `${baseStyle} border-[#a8a29e]/20 bg-[#faf6f1] text-[#a8a29e]`;
     }
   };
 
@@ -251,7 +251,7 @@ export default function Trips() {
             onClick={() => toggleFavorite(trip)}
             disabled={favoriteId === trip._id}
             className={`inline-flex items-center gap-1 rounded-full border px-3 py-2 text-xs font-medium transition ${
-              trip.isFavorite ? "border-red-200 bg-red-50 text-red-600" : "border-[#7C5E3C]/20 bg-white text-[#7C5E3C]"
+              trip.isFavorite ? "border-red-200 bg-red-50 text-red-600" : "border-[#a8a29e]/20 bg-white text-[#a8a29e]"
             }`}
           >
             <Heart className={`h-4 w-4 ${trip.isFavorite ? "fill-current" : ""}`} />
@@ -262,7 +262,7 @@ export default function Trips() {
         {canOpenDashboard(trip) && (
           <Link
             href={`/dashboard/client/trips/${trip._id}`}
-            className="inline-flex items-center gap-1 rounded-full bg-[#14532D] px-3 py-2 text-xs font-medium text-white transition hover:bg-[#0f3d26]"
+            className="inline-flex items-center gap-1 rounded-full bg-[#7c2d12] px-3 py-2 text-xs font-medium text-white transition hover:bg-[#431407]"
           >
             <MessageCircle className="h-4 w-4" />
             Open dashboard
@@ -273,7 +273,7 @@ export default function Trips() {
           <button
             onClick={() => joinTrip(trip._id)}
             disabled={joiningId === trip._id}
-            className="inline-flex items-center gap-1 rounded-full bg-[#22C55E] px-3 py-2 text-xs font-medium text-white transition hover:bg-[#16A34A] disabled:opacity-50"
+            className="inline-flex items-center gap-1 rounded-full bg-[#ea580c] px-3 py-2 text-xs font-medium text-white transition hover:bg-[#c2410c] disabled:opacity-50"
           >
             {joiningId === trip._id ? <Loader className="h-4 w-4 animate-spin" /> : <Users className="h-4 w-4" />}
             {joiningId === trip._id ? "Joining..." : "Join trip"}
@@ -281,7 +281,7 @@ export default function Trips() {
         )}
 
         {status === "unauthenticated" && (
-          <Link href="/login" className="inline-flex items-center gap-1 rounded-full bg-[#22C55E] px-3 py-2 text-xs font-medium text-white transition hover:bg-[#16A34A]">
+          <Link href="/login" className="inline-flex items-center gap-1 rounded-full bg-[#ea580c] px-3 py-2 text-xs font-medium text-white transition hover:bg-[#c2410c]">
             Sign in to join
           </Link>
         )}
@@ -290,7 +290,7 @@ export default function Trips() {
           <>
             <button
               onClick={() => setSelectedTrip(trip)}
-              className="rounded-full p-2 text-[#7C5E3C] transition hover:bg-[#22C55E]/10 hover:text-[#22C55E]"
+              className="rounded-full p-2 text-[#a8a29e] transition hover:bg-[#ea580c]/10 hover:text-[#ea580c]"
               title="Edit trip"
             >
               <Edit2 className="h-4 w-4" />
@@ -298,7 +298,7 @@ export default function Trips() {
             <button
               onClick={() => deleteTrip(trip._id)}
               disabled={deletingId === trip._id}
-              className="rounded-full p-2 text-[#7C5E3C] transition hover:bg-red-50 hover:text-red-600 disabled:opacity-50"
+              className="rounded-full p-2 text-[#a8a29e] transition hover:bg-red-50 hover:text-red-600 disabled:opacity-50"
               title="Delete trip"
             >
               {deletingId === trip._id ? <Loader className="h-4 w-4 animate-spin" /> : <Trash2 className="h-4 w-4" />}
@@ -310,12 +310,12 @@ export default function Trips() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FAF3E0] via-[#FAF3E0]/60 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#faf6f1] via-[#faf6f1]/60 to-white">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-[#14532D] sm:text-4xl">{status === "authenticated" ? "Trips" : "Public Trips"}</h1>
-            <p className="mt-1 text-[#7C5E3C]">
+            <h1 className="text-3xl font-bold text-[#7c2d12] sm:text-4xl">{status === "authenticated" ? "Trips" : "Public Trips"}</h1>
+            <p className="mt-1 text-[#a8a29e]">
               {status === "authenticated"
                 ? "Public trips can be joined, saved to favorites, and opened in a shared dashboard with members and chat."
                 : "Browse public trips. Sign in to join a group, chat with members, and save favorites."}
@@ -326,17 +326,17 @@ export default function Trips() {
             <button
               onClick={fetchTrips}
               disabled={isLoading}
-              className="inline-flex items-center gap-2 rounded-full border border-[#7C5E3C]/30 bg-white/70 px-4 py-2 text-[#14532D] shadow-sm transition disabled:opacity-50"
+              className="inline-flex items-center gap-2 rounded-full border border-[#a8a29e]/30 bg-white/70 px-4 py-2 text-[#7c2d12] shadow-sm transition disabled:opacity-50"
             >
               <RefreshCw className={`h-4 w-4 ${isLoading ? "animate-spin" : ""}`} />
               <span className="text-sm font-medium">Refresh</span>
             </button>
             {status === "authenticated" ? (
-              <Link href="/dashboard/client/addTrip" className="inline-flex items-center gap-2 rounded-full bg-[#22C55E] px-5 py-2 text-white shadow-sm transition hover:bg-[#16A34A]">
+              <Link href="/dashboard/client/addTrip" className="inline-flex items-center gap-2 rounded-full bg-[#ea580c] px-5 py-2 text-white shadow-sm transition hover:bg-[#c2410c]">
                 <span className="text-sm font-medium">Create trip</span>
               </Link>
             ) : (
-              <Link href="/login" className="inline-flex items-center gap-2 rounded-full bg-[#22C55E] px-5 py-2 text-white shadow-sm transition hover:bg-[#16A34A]">
+              <Link href="/login" className="inline-flex items-center gap-2 rounded-full bg-[#ea580c] px-5 py-2 text-white shadow-sm transition hover:bg-[#c2410c]">
                 <span className="text-sm font-medium">Sign in</span>
               </Link>
             )}
@@ -356,12 +356,12 @@ export default function Trips() {
         )}
 
         {inviteCode && (
-          <div className="mb-6 flex flex-col gap-3 rounded-2xl border border-[#14532D]/10 bg-white p-5 shadow-sm md:flex-row md:items-center md:justify-between">
+          <div className="mb-6 flex flex-col gap-3 rounded-2xl border border-[#7c2d12]/10 bg-white p-5 shadow-sm md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-sm uppercase tracking-[0.2em] text-[#7C5E3C]">Invite detected</p>
-              <p className="mt-1 text-[#14532D]">You opened an invitation link for a private group. Sign in and accept it to enter the dashboard.</p>
+              <p className="text-sm uppercase tracking-[0.2em] text-[#a8a29e]">Invite detected</p>
+              <p className="mt-1 text-[#7c2d12]">You opened an invitation link for a private group. Sign in and accept it to enter the dashboard.</p>
             </div>
-            <button onClick={acceptInvite} disabled={inviteLoading} className="rounded-full bg-[#14532D] px-5 py-3 text-sm font-medium text-white disabled:opacity-50">
+            <button onClick={acceptInvite} disabled={inviteLoading} className="rounded-full bg-[#7c2d12] px-5 py-3 text-sm font-medium text-white disabled:opacity-50">
               {inviteLoading ? "Joining..." : "Accept invitation"}
             </button>
           </div>
@@ -369,19 +369,19 @@ export default function Trips() {
 
         <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div className="relative w-full md:max-w-md">
-            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#7C5E3C]/70" />
+            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#a8a29e]/70" />
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search by trip name or destination..."
-              className="w-full rounded-full border border-[#7C5E3C]/25 bg-white/80 py-2.5 pl-11 pr-4 shadow-sm focus:border-[#22C55E]/40 focus:outline-none focus:ring-2 focus:ring-[#22C55E]/40"
+              className="w-full rounded-full border border-[#a8a29e]/25 bg-white/80 py-2.5 pl-11 pr-4 shadow-sm focus:border-[#ea580c]/40 focus:outline-none focus:ring-2 focus:ring-[#ea580c]/40"
             />
           </div>
 
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value as "All" | Trip["status"])}
-            className="rounded-full border border-[#7C5E3C]/25 bg-white/80 px-4 py-2.5 text-sm text-[#14532D] shadow-sm focus:border-[#22C55E]/40 focus:outline-none focus:ring-2 focus:ring-[#22C55E]/40"
+            className="rounded-full border border-[#a8a29e]/25 bg-white/80 px-4 py-2.5 text-sm text-[#7c2d12] shadow-sm focus:border-[#ea580c]/40 focus:outline-none focus:ring-2 focus:ring-[#ea580c]/40"
           >
             <option value="All">All statuses</option>
             <option value="In Progress">In progress</option>
@@ -393,33 +393,33 @@ export default function Trips() {
         {isLoading ? (
           <div className="flex items-center justify-center py-20">
             <div className="text-center">
-              <Loader className="mx-auto mb-3 h-10 w-10 animate-spin text-[#22C55E]" />
-              <p className="text-[#7C5E3C]">Loading trips...</p>
+              <Loader className="mx-auto mb-3 h-10 w-10 animate-spin text-[#ea580c]" />
+              <p className="text-[#a8a29e]">Loading trips...</p>
             </div>
           </div>
         ) : filteredTrips.length === 0 ? (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="rounded-2xl border border-[#7C5E3C]/20 bg-white p-12 text-center shadow-sm">
-            <Globe className="mx-auto mb-4 h-16 w-16 text-[#7C5E3C]/40" />
-            <h3 className="mb-1 text-xl font-semibold text-[#14532D]">No trips found</h3>
-            <p className="text-[#7C5E3C]">Try a different search or create a new trip.</p>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="rounded-2xl border border-[#a8a29e]/20 bg-white p-12 text-center shadow-sm">
+            <Globe className="mx-auto mb-4 h-16 w-16 text-[#a8a29e]/40" />
+            <h3 className="mb-1 text-xl font-semibold text-[#7c2d12]">No trips found</h3>
+            <p className="text-[#a8a29e]">Try a different search or create a new trip.</p>
           </motion.div>
         ) : (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             {filteredTrips.map((trip) => (
-              <div key={trip._id} className="rounded-2xl border border-[#7C5E3C]/15 bg-white p-5 shadow-sm">
+              <div key={trip._id} className="rounded-2xl border border-[#a8a29e]/15 bg-white p-5 shadow-sm">
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0">
-                    <p className="text-sm text-[#7C5E3C]">Trip</p>
-                    <p className="truncate text-lg font-semibold text-[#14532D]">{trip.name || trip.destination}</p>
-                    <div className="mt-2 flex items-center gap-2 text-sm text-[#7C5E3C]">
-                      <MapPin className="h-4 w-4 text-[#22C55E]" />
+                    <p className="text-sm text-[#a8a29e]">Trip</p>
+                    <p className="truncate text-lg font-semibold text-[#7c2d12]">{trip.name || trip.destination}</p>
+                    <div className="mt-2 flex items-center gap-2 text-sm text-[#a8a29e]">
+                      <MapPin className="h-4 w-4 text-[#ea580c]" />
                       <span className="truncate">{trip.destination}</span>
                     </div>
-                    <div className="mt-2 flex items-center gap-2 text-sm text-[#7C5E3C]">
+                    <div className="mt-2 flex items-center gap-2 text-sm text-[#a8a29e]">
                       <Calendar className="h-4 w-4" />
                       <span>{formatTripDay(trip.tripDay)}</span>
                     </div>
-                    <div className="mt-2 flex items-center gap-2 text-sm text-[#7C5E3C]">
+                    <div className="mt-2 flex items-center gap-2 text-sm text-[#a8a29e]">
                       <Users className="h-4 w-4" />
                       <span>
                         {joinedCount(trip)} / {trip.numberOfPeople ?? 0} members
@@ -429,23 +429,23 @@ export default function Trips() {
 
                   <div className="flex flex-col items-end gap-2">
                     <span className={getStatusStyles(trip.status)}>{trip.status === "Done" ? "Completed" : trip.status}</span>
-                    <span className="inline-flex items-center gap-1 rounded-full border border-[#7C5E3C]/20 bg-[#FAF3E0]/50 px-2.5 py-1 text-xs text-[#7C5E3C]">
+                    <span className="inline-flex items-center gap-1 rounded-full border border-[#a8a29e]/20 bg-[#faf6f1]/50 px-2.5 py-1 text-xs text-[#a8a29e]">
                       {trip.visibility === "Private" ? <Lock className="h-3.5 w-3.5" /> : <Globe className="h-3.5 w-3.5" />}
                       {trip.visibility || "Public"}
                     </span>
                     {status === "authenticated" && isTripJoined(trip) && !canManageTrip(trip) && (
-                      <span className="rounded-full bg-[#22C55E]/10 px-2.5 py-1 text-xs font-medium text-[#22C55E]">Joined</span>
+                      <span className="rounded-full bg-[#ea580c]/10 px-2.5 py-1 text-xs font-medium text-[#ea580c]">Joined</span>
                     )}
                   </div>
                 </div>
 
-                {trip.description && <p className="mt-4 line-clamp-3 text-sm leading-6 text-[#7C5E3C]">{trip.description}</p>}
+                {trip.description && <p className="mt-4 line-clamp-3 text-sm leading-6 text-[#a8a29e]">{trip.description}</p>}
 
-                <div className="mt-4 flex flex-col gap-3 border-t border-[#7C5E3C]/10 pt-4">
-                  <div className="flex flex-wrap gap-2 text-xs text-[#7C5E3C]">
-                    <span className="rounded-full bg-[#FAF3E0] px-3 py-1">Host: {trip.userEmail}</span>
-                    <span className="rounded-full bg-[#FAF3E0] px-3 py-1">{trip.hour}</span>
-                    {trip.visibility === "Public" && <span className="rounded-full bg-[#FAF3E0] px-3 py-1">Public group chat enabled</span>}
+                <div className="mt-4 flex flex-col gap-3 border-t border-[#a8a29e]/10 pt-4">
+                  <div className="flex flex-wrap gap-2 text-xs text-[#a8a29e]">
+                    <span className="rounded-full bg-[#faf6f1] px-3 py-1">Host: {trip.userEmail}</span>
+                    <span className="rounded-full bg-[#faf6f1] px-3 py-1">{trip.hour}</span>
+                    {trip.visibility === "Public" && <span className="rounded-full bg-[#faf6f1] px-3 py-1">Public group chat enabled</span>}
                   </div>
                   {renderActions(trip)}
                 </div>
@@ -455,9 +455,9 @@ export default function Trips() {
         )}
 
         {trips.length > 0 && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-6 text-sm text-[#7C5E3C]">
-            Showing <span className="font-semibold text-[#14532D]">{filteredTrips.length}</span> of{" "}
-            <span className="font-semibold text-[#14532D]">{trips.length}</span> trips
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-6 text-sm text-[#a8a29e]">
+            Showing <span className="font-semibold text-[#7c2d12]">{filteredTrips.length}</span> of{" "}
+            <span className="font-semibold text-[#7c2d12]">{trips.length}</span> trips
           </motion.div>
         )}
       </div>

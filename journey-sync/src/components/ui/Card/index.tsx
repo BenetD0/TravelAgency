@@ -13,8 +13,8 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cs(
-          "bg-white rounded-2xl border border-gray-100 shadow-sm transition-all",
-          hoverable && "hover:shadow-xl hover:-translate-y-1",
+          "bg-white rounded-2xl border border-[#a8a29e]/10 shadow-sm transition-all",
+          hoverable && "hover:shadow-xl hover:-translate-y-1 hover:border-[#ea580c]/20",
           className
         )}
         {...props}
@@ -33,7 +33,7 @@ const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>(
     return (
       <div
         ref={ref}
-        className={cs("px-6 pt-6 pb-3 border-b border-gray-100", className)}
+        className={cs("px-6 pt-6 pb-3 border-b border-[#a8a29e]/10", className)}
         {...props}
       >
         {children}
@@ -63,7 +63,7 @@ const CardFooter = forwardRef<HTMLDivElement, CardFooterProps>(
     return (
       <div
         ref={ref}
-        className={cs("px-6 py-4 border-t border-gray-100", className)}
+        className={cs("px-6 py-4 border-t border-[#a8a29e]/10", className)}
         {...props}
       >
         {children}

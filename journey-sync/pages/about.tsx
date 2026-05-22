@@ -7,15 +7,15 @@ import { Globe, Users, Heart, Sparkles, Code2, Zap, Rocket } from "lucide-react"
 const teamMembers = [
   {
     id: 1,
-    name: "Erti Hoxha",
+    name: "Eni Salihu",
     role: "Team Lead & Full Stack Developer",
     icon: Rocket,
-    bio: "Visionary leader and driving force behind JourneySync. His passion for travel and technology inspired the creation of this platform.",
+    bio: "Visionary leader and driving force behind Voyago. His passion for travel and technology inspired the creation of this platform.",
     skills: ["Next.js", "TypeScript", "MongoDB", "UI/UX"],
   },
   {
     id: 2,
-    name: "Anita Maloku",
+    name: "Benet Demaj",
     role: "Full Stack Developer",
     icon: Sparkles,
     bio: "Expert in creating elegant and intuitive visual experiences. Obsessed with details that make all the difference in user satisfaction.",
@@ -23,61 +23,45 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: "Getuar Gashi",
+    name: "Denis Kursani",
     role: "Full Stack Developer",
     icon: Code2,
     bio: "Ensures high performance, security, and clean architecture in the backend. Builds the foundation that everything else relies on.",
     skills: ["Node.js", "MongoDB", "API", "Authentication"],
   },
-  {
-    id: 4,
-    name: "Anes Sheremeti",
-    role: "Full Stack Developer",
-    icon: Zap,
-    bio: "Specialist in user experience and complex functionalities. Ensures everything feels effortless and intuitive for users.",
-    skills: ["Frontend", "Real-time", "Testing", "Optimization"],
-  },
-  {
-    id: 5,
-    name: "Ensar Zeqiri",
-    role: "Full Stack Developer",
-    icon: Users,
-    bio: "Expert in real-time synchronization and collaboration. Makes sure trips stay perfectly synced across all participants.",
-    skills: ["WebSocket", "Live Sync", "Database", "Deployment"],
-  },
 ];
 
 const accent = {
-  bg: "bg-[#22C55E]/10",
-  text: "text-[#22C55E]",
-  gradient: "from-[#14532D] to-[#22C55E]",
-  badge: "bg-[#22C55E]/10 text-[#14532D] border border-[#22C55E]/20",
+  bg: "bg-[#ea580c]/10",
+  text: "text-[#ea580c]",
+  gradient: "from-[#7c2d12] to-[#ea580c]",
+  badge: "bg-[#ea580c]/10 text-[#7c2d12] border border-[#ea580c]/20",
 };
 
 export default function About() {
   const [selectedMember, setSelectedMember] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FAF3E0] via-[#FAF3E0]/60 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#faf6f1] via-[#faf6f1]/60 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 bg-white/80 border border-[#7C5E3C]/20 text-[#14532D] text-sm font-medium px-4 py-2 rounded-full mb-6 shadow-sm"
+            className="inline-flex items-center gap-2 bg-white/80 border border-[#a8a29e]/20 text-[#7c2d12] text-sm font-medium px-4 py-2 rounded-full mb-6 shadow-sm"
           >
-            <Globe className="w-4 h-4 text-[#22C55E]" />
+            <Globe className="w-4 h-4 text-[#ea580c]" />
             OUR STORY • OUR TEAM • 2026
           </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#14532D] tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#7c2d12] tracking-tight mb-6">
             Meet the Team Behind
             <br />
-            <span className="text-[#22C55E]">JourneySync</span>
+            <span className="text-[#ea580c]">Voyago</span>
           </h1>
 
-          <p className="text-lg text-[#7C5E3C] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-[#a8a29e] max-w-3xl mx-auto leading-relaxed">
             A passionate team of computer science students from UBT, united by our love for technology
             and travel. What started as a university project has evolved into a platform that brings
             travelers together in meaningful ways.
@@ -91,15 +75,15 @@ export default function About() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto mb-20"
         >
-          <div className="bg-white rounded-2xl shadow-lg border border-[#7C5E3C]/15 p-8 md:p-12 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-[#22C55E]/10 rounded-xl mb-6">
-              <Heart className="w-8 h-8 text-[#22C55E]" />
+          <div className="bg-white rounded-2xl shadow-lg border border-[#a8a29e]/15 p-8 md:p-12 text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-[#ea580c]/10 rounded-xl mb-6">
+              <Heart className="w-8 h-8 text-[#ea580c]" />
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#14532D] mb-6">Our Journey</h2>
-            <div className="text-[#7C5E3C] leading-relaxed space-y-4 max-w-3xl mx-auto text-left">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#7c2d12] mb-6">Voyago</h2>
+            <div className="text-[#a8a29e] leading-relaxed space-y-4 max-w-3xl mx-auto text-left">
               <p>
                 In 2026, during our{" "}
-                <span className="font-semibold text-[#14532D]">
+                <span className="font-semibold text-[#7c2d12]">
                   &ldquo;Client-Side Web Development&rdquo;
                 </span>{" "}
                 course at UBT, our team decided not to create just another academic project.
@@ -119,14 +103,14 @@ export default function About() {
         {/* Team Section */}
         <div className="mb-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#14532D] mb-3">Meet Our Team</h2>
-            <p className="text-[#7C5E3C] text-lg max-w-2xl mx-auto">
-              Five talented computer science students from UBT, each bringing unique skills
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#7c2d12] mb-3">Meet Our Team</h2>
+            <p className="text-[#a8a29e] text-lg max-w-2xl mx-auto">
+              Three talented computer science students from UBT, each bringing unique skills
               and perspectives to create something extraordinary.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {teamMembers.map((member, index) => {
               return (
                 <motion.div
@@ -139,16 +123,16 @@ export default function About() {
                   onClick={() => setSelectedMember(member.id)}
                   className="group cursor-pointer"
                 >
-                  <div className="bg-white rounded-xl shadow-sm border border-[#7C5E3C]/15 hover:shadow-md transition-all overflow-hidden h-full">
+                  <div className="bg-white rounded-xl shadow-sm border border-[#a8a29e]/15 hover:shadow-md transition-all overflow-hidden h-full">
                     <div className="p-6 flex flex-col items-center text-center">
                       <div
                         className={`w-16 h-16 rounded-xl ${accent.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
                       >
                         <member.icon className={`w-8 h-8 ${accent.text}`} />
                       </div>
-                      <h3 className="text-lg font-bold text-[#14532D] mb-1">{member.name}</h3>
-                      <p className="text-sm text-[#7C5E3C] mb-4">{member.role}</p>
-                      <p className="text-[#7C5E3C] text-sm leading-relaxed line-clamp-3">{member.bio}</p>
+                      <h3 className="text-lg font-bold text-[#7c2d12] mb-1">{member.name}</h3>
+                      <p className="text-sm text-[#a8a29e] mb-4">{member.role}</p>
+                      <p className="text-[#a8a29e] text-sm leading-relaxed line-clamp-3">{member.bio}</p>
                       <div className="mt-4 flex flex-wrap gap-1.5 justify-center">
                         {member.skills.slice(0, 2).map((skill, i) => (
                           <span
@@ -159,7 +143,7 @@ export default function About() {
                           </span>
                         ))}
                         {member.skills.length > 2 && (
-                          <span className="text-xs px-2 py-0.5 bg-[#FAF3E0] text-[#7C5E3C] border border-[#7C5E3C]/15 rounded-full">
+                          <span className="text-xs px-2 py-0.5 bg-[#faf6f1] text-[#a8a29e] border border-[#a8a29e]/15 rounded-full">
                             +{member.skills.length - 2}
                           </span>
                         )}
@@ -174,8 +158,8 @@ export default function About() {
         </div>
 
         {/* Footer note */}
-        <div className="text-center pt-8 border-t border-[#7C5E3C]/10">
-          <p className="text-[#7C5E3C] text-sm">
+        <div className="text-center pt-8 border-t border-[#a8a29e]/10">
+          <p className="text-[#a8a29e] text-sm">
             We&apos;re all computer science students at UBT — and we&apos;ve created something we hope will grow and help travelers worldwide.
           </p>
         </div>
@@ -211,7 +195,7 @@ export default function About() {
                       </div>
                     </div>
                     <div className="p-6">
-                      <p className="text-[#7C5E3C] leading-relaxed mb-6">{member.bio}</p>
+                      <p className="text-[#a8a29e] leading-relaxed mb-6">{member.bio}</p>
                       <div className="flex flex-wrap gap-2">
                         {member.skills.map((skill, i) => (
                           <span key={i} className={`text-sm px-3 py-1 ${accent.badge} rounded-full`}>

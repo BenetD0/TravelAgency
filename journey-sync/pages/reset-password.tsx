@@ -115,7 +115,7 @@ export default function ResetPassword() {
               <Link href="/" className="inline-flex items-center gap-2">
                 <Globe className="w-8 h-8 text-[#22C55E]" />
                 <span className="text-2xl font-black bg-gradient-to-r from-[#14532D] to-[#22C55E] bg-clip-text text-transparent">
-                  Journey Sync
+                  Voyago
                 </span>
               </Link>
               <h1 className="text-3xl font-bold text-gray-900 mt-6">Rivendos Fjalëkalimin</h1>

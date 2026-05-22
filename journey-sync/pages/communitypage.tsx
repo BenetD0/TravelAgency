@@ -26,37 +26,37 @@ export default function Community() {
   const [activeTab, setActiveTab] = useState<"private" | "public">("private");
 
   return (
-    <div className="min-h-screen bg-[#FAF3E0]">
+    <div className="min-h-screen bg-[#faf6f1]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         {/* Hero Section */}
         <div className="text-center mb-12 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 bg-[#22C55E]/10 text-[#22C55E] px-4 py-2 rounded-full mb-6"
+            className="inline-flex items-center gap-2 bg-[#ea580c]/10 text-[#ea580c] px-4 py-2 rounded-full mb-6"
           >
             <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">Journey Sync Community</span>
+            <span className="text-sm font-medium">Voyago Community</span>
           </motion.div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#14532D] tracking-tight mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#7c2d12] tracking-tight mb-4">
             Travel your way
           </h1>
-          <p className="text-xl text-[#7C5E3C] max-w-3xl mx-auto">
-            Choose between <span className="font-semibold text-[#22C55E]">private</span> trips with family and friends,
-            or <span className="font-semibold text-[#22C55E]">public</span> trips to meet new travelers from around the world.
+          <p className="text-xl text-[#a8a29e] max-w-3xl mx-auto">
+            Choose between <span className="font-semibold text-[#ea580c]">private</span> trips with family and friends,
+            or <span className="font-semibold text-[#ea580c]">public</span> trips to meet new travelers from around the world.
           </p>
         </div>
 
         {/* Tabs */}
         <div className="flex justify-center mb-12">
-          <div className="bg-white rounded-full p-1 flex shadow-sm border border-[#7C5E3C]/20">
+          <div className="bg-white rounded-full p-1 flex shadow-sm border border-[#a8a29e]/20">
             <button
               onClick={() => setActiveTab("private")}
               className={`px-6 md:px-8 py-2.5 rounded-full font-semibold transition-all flex items-center gap-2 text-sm md:text-base ${
                 activeTab === "private"
-                  ? "bg-[#22C55E] text-white shadow-sm"
-                  : "text-[#7C5E3C] hover:text-[#14532D]"
+                  ? "bg-[#ea580c] text-white shadow-sm"
+                  : "text-[#a8a29e] hover:text-[#7c2d12]"
               }`}
             >
               <Lock className="w-4 h-4" />
@@ -66,8 +66,8 @@ export default function Community() {
               onClick={() => setActiveTab("public")}
               className={`px-6 md:px-8 py-2.5 rounded-full font-semibold transition-all flex items-center gap-2 text-sm md:text-base ${
                 activeTab === "public"
-                  ? "bg-[#22C55E] text-white shadow-sm"
-                  : "text-[#7C5E3C] hover:text-[#14532D]"
+                  ? "bg-[#ea580c] text-white shadow-sm"
+                  : "text-[#a8a29e] hover:text-[#7c2d12]"
               }`}
             >
               <Globe className="w-4 h-4" />
@@ -88,14 +88,14 @@ export default function Community() {
             >
               <div className="grid lg:grid-cols-2 gap-12 items-start">
                 <div>
-                  <div className="inline-flex items-center gap-2 bg-[#22C55E]/10 text-[#22C55E] px-4 py-1.5 rounded-full mb-4">
+                  <div className="inline-flex items-center gap-2 bg-[#ea580c]/10 text-[#ea580c] px-4 py-1.5 rounded-full mb-4">
                     <Lock className="w-4 h-4" />
                     <span className="text-sm font-medium">For those who want intimacy</span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#14532D] leading-tight mb-4">
+                  <h2 className="text-3xl md:text-4xl font-bold text-[#7c2d12] leading-tight mb-4">
                     Create your private group
                   </h2>
-                  <p className="text-[#7C5E3C] mb-6">
+                  <p className="text-[#a8a29e] mb-6">
                     Invite only the people you want. Plan your trip in a secure space without outside interference.
                   </p>
 
@@ -108,8 +108,8 @@ export default function Community() {
                         transition={{ delay: i * 0.05 }}
                         className="flex items-start gap-3"
                       >
-                        <CheckCircle className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0" />
-                        <span className="text-[#14532D]">{feature}</span>
+                        <CheckCircle className="w-5 h-5 text-[#ea580c] mt-0.5 flex-shrink-0" />
+                        <span className="text-[#7c2d12]">{feature}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -117,7 +117,7 @@ export default function Community() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="bg-[#22C55E] hover:bg-[#16A34A] text-white font-semibold px-8 py-3 rounded-full flex items-center gap-2 transition shadow-sm"
+                    className="bg-[#ea580c] hover:bg-[#c2410c] text-white font-semibold px-8 py-3 rounded-full flex items-center gap-2 transition shadow-sm"
                   >
                     Create Private Group
                     <ArrowRight className="w-5 h-5" />
@@ -128,18 +128,18 @@ export default function Community() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="bg-white rounded-2xl shadow-md border border-[#7C5E3C]/20 p-6 md:p-8"
+                  className="bg-white rounded-2xl shadow-md border border-[#a8a29e]/20 p-6 md:p-8"
                 >
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
-                      <Lock className="w-5 h-5 text-[#22C55E]" />
-                      <span className="text-sm font-medium text-[#7C5E3C]">Private Group</span>
+                      <Lock className="w-5 h-5 text-[#ea580c]" />
+                      <span className="text-sm font-medium text-[#a8a29e]">Private Group</span>
                     </div>
                     <Heart className="w-5 h-5 text-red-400" />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#14532D] mb-2">Family in Santorini</h3>
-                  <p className="text-[#7C5E3C] text-sm mb-4">6 members • Invite only</p>
-                  <div className="h-32 bg-gradient-to-r from-[#22C55E]/20 to-[#14532D]/20 rounded-xl flex items-center justify-center">
+                  <h3 className="text-2xl font-bold text-[#7c2d12] mb-2">Family in Santorini</h3>
+                  <p className="text-[#a8a29e] text-sm mb-4">6 members • Invite only</p>
+                  <div className="h-32 bg-gradient-to-r from-[#ea580c]/20 to-[#7c2d12]/20 rounded-xl flex items-center justify-center">
                     <span className="text-4xl">🏝️</span>
                   </div>
                 </motion.div>
@@ -158,14 +158,14 @@ export default function Community() {
             >
               <div className="grid lg:grid-cols-2 gap-12 items-start">
                 <div>
-                  <div className="inline-flex items-center gap-2 bg-[#22C55E]/10 text-[#22C55E] px-4 py-1.5 rounded-full mb-4">
+                  <div className="inline-flex items-center gap-2 bg-[#ea580c]/10 text-[#ea580c] px-4 py-1.5 rounded-full mb-4">
                     <Globe className="w-4 h-4" />
                     <span className="text-sm font-medium">For social adventurers</span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#14532D] leading-tight mb-4">
+                  <h2 className="text-3xl md:text-4xl font-bold text-[#7c2d12] leading-tight mb-4">
                     Join the community
                   </h2>
-                  <p className="text-[#7C5E3C] mb-6">
+                  <p className="text-[#a8a29e] mb-6">
                     Create or join public trips. Socialize, share experiences and create memories with people from all over the world.
                   </p>
 
@@ -178,8 +178,8 @@ export default function Community() {
                         transition={{ delay: i * 0.05 }}
                         className="flex items-start gap-3"
                       >
-                        <Zap className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0" />
-                        <span className="text-[#14532D]">{feature}</span>
+                        <Zap className="w-5 h-5 text-[#ea580c] mt-0.5 flex-shrink-0" />
+                        <span className="text-[#7c2d12]">{feature}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -187,7 +187,7 @@ export default function Community() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="bg-[#22C55E] hover:bg-[#16A34A] text-white font-semibold px-8 py-3 rounded-full flex items-center gap-2 transition shadow-sm"
+                    className="bg-[#ea580c] hover:bg-[#c2410c] text-white font-semibold px-8 py-3 rounded-full flex items-center gap-2 transition shadow-sm"
                   >
                     Browse Public Trips
                     <Globe className="w-5 h-5" />
@@ -198,23 +198,23 @@ export default function Community() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="bg-white rounded-2xl shadow-md border border-[#7C5E3C]/20 p-6 md:p-8"
+                  className="bg-white rounded-2xl shadow-md border border-[#a8a29e]/20 p-6 md:p-8"
                 >
                   <div className="flex justify-between items-center mb-4">
                     <div className="flex items-center gap-2">
-                      <Globe className="w-5 h-5 text-[#22C55E]" />
-                      <span className="text-sm font-medium text-[#7C5E3C]">Public Trip • LIVE</span>
+                      <Globe className="w-5 h-5 text-[#ea580c]" />
+                      <span className="text-sm font-medium text-[#a8a29e]">Public Trip • LIVE</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4 text-[#7C5E3C]" />
-                      <span className="text-sm font-medium text-[#14532D]">28</span>
+                      <Users className="w-4 h-4 text-[#a8a29e]" />
+                      <span className="text-sm font-medium text-[#7c2d12]">28</span>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-[#14532D] mb-2">Hiking in the Accursed Mountains</h3>
+                  <h3 className="text-2xl font-bold text-[#7c2d12] mb-2">Hiking in the Accursed Mountains</h3>
                   <div className="w-full bg-[#E2E8F0] rounded-full h-2 mb-4">
-                    <div className="bg-[#22C55E] h-2 rounded-full w-[65%]" />
+                    <div className="bg-[#ea580c] h-2 rounded-full w-[65%]" />
                   </div>
-                  <p className="text-[#7C5E3C] text-sm italic">“An unforgettable adventure with fantastic people”</p>
+                  <p className="text-[#a8a29e] text-sm italic">“An unforgettable adventure with fantastic people”</p>
                 </motion.div>
               </div>
             </motion.div>
@@ -229,17 +229,17 @@ export default function Community() {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto"
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-[#14532D] mb-4">
-              Ready to start your journey?
+            <h3 className="text-2xl md:text-3xl font-bold text-[#7c2d12] mb-4">
+              Ready to start your trip?
             </h3>
-            <p className="text-[#7C5E3C] mb-8">
+            <p className="text-[#a8a29e] mb-8">
               Create your first trip now — whether private with loved ones, or public to meet new people.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#22C55E] hover:bg-[#16A34A] text-white font-semibold px-8 py-3 rounded-full transition shadow-sm">
+              <button className="bg-[#ea580c] hover:bg-[#c2410c] text-white font-semibold px-8 py-3 rounded-full transition shadow-sm">
                 Create Private Group
               </button>
-              <button className="border-2 border-[#7C5E3C]/30 hover:border-[#22C55E] text-[#14532D] font-semibold px-8 py-3 rounded-full transition">
+              <button className="border-2 border-[#a8a29e]/30 hover:border-[#ea580c] text-[#7c2d12] font-semibold px-8 py-3 rounded-full transition">
                 Browse Public Trips
               </button>
             </div>

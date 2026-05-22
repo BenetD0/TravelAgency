@@ -105,7 +105,7 @@ export default function AllTrips() {
                     className="mb-12"
                 >
                     <h1 className="text-4xl sm:text-5xl font-bold mb-2 text-[#14532D]">All Trips</h1>
-                    <p className="text-[#7C5E3C] text-lg">Manage and monitor all user journeys</p>
+                    <p className="text-[#7C5E3C] text-lg">Manage and monitor all user trips</p>
                 </motion.div>
 
                 {/* Error Alert */}

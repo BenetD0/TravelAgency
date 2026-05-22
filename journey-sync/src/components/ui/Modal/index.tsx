@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { createPortal } from "react-dom";
+import { createPortal } from "react-dom"; 
 import { X } from "lucide-react";
 import cs from "classnames";
 
@@ -75,12 +75,12 @@ export function Modal({
       >
         {/* Header */}
         {(title || showCloseButton) && (
-          <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-[#a8a29e]/10">
             {title && <h3 className="text-xl font-semibold text-gray-900">{title}</h3>}
             {showCloseButton && (
               <button
                 onClick={onClose}
-                className="p-1 text-gray-400 hover:text-gray-600 transition rounded-full hover:bg-gray-100"
+                className="p-1 text-[#a8a29e] hover:text-[#7c2d12] transition rounded-full hover:bg-[#faf6f1]"
               >
                 <X className="w-5 h-5" />
               </button>
